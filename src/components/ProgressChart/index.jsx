@@ -10,21 +10,15 @@ export const ProgressChart = () => {
       >
         Vývoj váhy (kg)
       </h2>
-      <ResponsiveContainer width="100%" height="300">
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="week" />
-          <YAxis domain={['auto', 'auto']} />
-          <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="weight"
-            stroke="#3b82f6"
-            strokeWidth={2}
-            dot={{ r: 4 }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+      <div className="flex flex-col items-start p-4">
+        <label
+          htmlFor="date"
+          className="mb-2 text-sm font-medium text-gray-700"
+        >
+          Vyberte datum
+        </label>
+        <input type="date" id="date" name="date" className="nazev-tridy" />
+      </div>
     </div>
   );
 };
